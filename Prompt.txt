@@ -1,0 +1,66 @@
+Act as an expert Full-Stack Web Developer specialized in Next.js (App Router), React, Tailwind CSS, and Supabase. 
+
+Your task is to build a comprehensive web application for Sub-district Health Promoting Hospitals (รพ.สต.) and Pharmacists to manage "Primary Care Pharmacy Services and Health Consumer Protection (คบส.)".
+
+Please strictly follow these requirements to generate the application:
+
+### 1. Tech Stack
+- Frontend: Next.js (App Router), React, TailwindCSS, Lucide Icons
+- Backend & Auth: Supabase (Authentication, PostgreSQL Database)
+- Deployment: Vercel (Provide configuration ready for Vercel)
+- Print/Export: Provide CSS print styles or a simple library for printing reports.
+
+### 2. User Roles
+- รพ.สต. (Staff): Can view dashboard, read knowledge base, submit Medication Errors (ME), report unsafe products, and upload/link evidence documents.
+- เภสัชกร (Pharmacist/Admin): Can do everything Staff can, PLUS edit the knowledge base for evaluation criteria, and manage overall data.
+
+### 3. Pages & Features Requirement
+**Page 1: Landing Page**
+- Clean, professional, medical-themed design.
+- Hero section Title: "งานเภสัชกรรมปฐมภูมิ เครือข่ายบริการสุขภาพอำเภอสวรรคโลก"
+- Call to Action button: "เข้าสู่ระบบ (Login)" and "สมัครสมาชิก (Register)".
+
+**Page 2: Authentication (Login / Register)**
+- Implement Supabase Auth (Email/Password).
+- Registration should require: Name, Email, Password, Role (รพ.สต. / เภสัชกร), and Hospital Name.
+
+**Page 3: Dashboard & Evaluation Criteria (ส่วนที่ 7)**
+- Once logged in, show a Dashboard summarizing Part 7 of the Primary Care standard: "การจัดบริการเภสัชกรรมและงานคุ้มครองผู้บริโภคด้านสุขภาพ (คบส.)".
+- Display a list of evaluation criteria divided into 2 main sections:
+  1. ด้านการจัดบริการเภสัชกรรม (64 คะแนน):
+     - การบริหารจัดการระบบยา
+     - การคัดเลือก การส่งมอบยาที่ปลอดภัยและมีคุณภาพ
+     - คลังยาและเวชภัณฑ์ หรือ ตู้เก็บยา
+     - การใช้ยาอย่างปลอดภัยและมีความสมเหตุผล (RDU)
+  2. งานคุ้มครองผู้บริโภคด้านสุขภาพ (คบส.) (18 คะแนน):
+     - การบริหารจัดการงาน คบส. ระดับอำเภอ
+     - การตรวจสอบ เฝ้าระวัง อาหารสด อาหารแปรรูป 
+     - การตรวจสอบร้านค้า/ร้านชำและบ้านผู้ป่วย
+     - องค์ความรู้ด้านผลิตภัณฑ์สุขภาพของผู้จำหน่าย
+     - การพัฒนาศักยภาพผู้บริโภค (อสม., นักเรียน)
+     - การมีส่วนร่วมของเครือข่าย
+- Feature: Clicking on each criteria opens a detail modal/page containing "Knowledge/Guidelines" for that specific criteria. 
+- Role Access: "เภสัชกร" can see an "Edit" button to modify this knowledge text directly (save to Supabase DB).
+
+**Page 4: Medication Error (ME) Management**
+- Form to record ME: Date, Patient HN (optional), Error Type, Severity, Description, and Actions Taken.
+- Real-time Summary Dashboard: Show charts/stats of ME.
+- Date-range filter (e.g., filter by month/year).
+- Print button: Uses `@media print` CSS to hide menus and cleanly print the summary report.
+
+**Page 5: Unsafe Health Products Reporting (แจ้งผลิตภัณฑ์สุขภาพไม่ปลอดภัย)**
+- Form for รพ.สต. to report unsafe products found in the community (Fields: Date, Product Name, Location Found, Image Upload, Description).
+- Real-time list/table of reported products.
+- Status indicator: Pending, Acknowledged (เภสัชกร คบส. can click to acknowledge).
+
+**Page 6: Evidence Document Upload (เชื่อมต่อ Google Drive / Cloud)**
+- A page showing the complete Checklist for supervision (นิเทศงาน).
+- For each checklist item, allow the user to input a "Google Drive Link" (since users will upload to their own Drive) or implement Supabase Storage for direct file uploads. 
+- Provide a feature to preview or list the uploaded links.
+- "Print Evidence Summary" button: Formats the checklist and document links into a clean A4 printable view for supervision audits.
+
+### 4. Initialization & Database Setup
+- Provide the SQL schema (for Supabase) to create the necessary tables: `users`, `evaluation_criteria`, `medication_errors`, `unsafe_products`, and `evidence_documents`. Include Row Level Security (RLS) policies concept if possible.
+- Seed the `evaluation_criteria` table with the Part 7 categories mentioned above.
+
+Please generate the complete codebase step-by-step, starting from project initialization, database schema, routing, and then building out the specific pages and components. Ensure the UI is modern, responsive, and in Thai language.
