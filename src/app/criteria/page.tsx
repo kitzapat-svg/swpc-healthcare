@@ -98,7 +98,7 @@ export default async function CriteriaPage() {
       <header className="screen-only sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/dashboard" className="flex items-center gap-3">
+            <Link href="/dashboard" className="flex items-center gap-3 active:scale-95 transition-transform">
               <div className="bg-primary p-2 rounded-xl text-white shadow-sm">
                 <Activity className="w-6 h-6" />
               </div>
@@ -147,7 +147,7 @@ export default async function CriteriaPage() {
       </header>
 
       {/* Main Container */}
-      <main className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
+      <main className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8 animate-page-enter">
         <CriteriaDashboard
           initialCriteria={criteriaItems}
           isPharmacist={isPharmacist}

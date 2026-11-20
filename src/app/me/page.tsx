@@ -125,13 +125,13 @@ export default async function MedicationErrorsPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/dashboard"
-              className="p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition mr-1"
+              className="p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 active:scale-90 transition mr-1"
               title="กลับสู่แดชบอร์ดหลัก"
             >
               <ArrowLeft className="w-5 h-5" />
             </Link>
 
-            <Link href="/dashboard" className="flex items-center gap-3">
+            <Link href="/dashboard" className="flex items-center gap-3 active:scale-95 transition-transform">
               <div className="bg-primary p-2 rounded-xl text-white shadow-sm">
                 <Activity className="w-6 h-6" />
               </div>
@@ -180,7 +180,7 @@ export default async function MedicationErrorsPage() {
       </header>
 
       {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto p-6 md:p-8">
+      <main className="max-w-7xl mx-auto p-6 md:p-8 animate-page-enter">
         <MEDashboard
           initialRecords={records}
           currentUserId={user?.id}

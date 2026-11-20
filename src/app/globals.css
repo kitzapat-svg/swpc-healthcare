@@ -35,6 +35,64 @@ html {
   .btn-secondary {
     @apply inline-flex items-center justify-center bg-white text-slate-800 font-medium px-5 py-2.5 rounded-xl border border-slate-200 shadow-sm hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-2 transition-[background-color,border-color,transform,box-shadow] duration-150 ease-out;
   }
+
+  /* Shimmer wave effect for skeletons */
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #e2e8f0;
+  }
+
+  .skeleton-shimmer::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.65) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer-sweep 1.8s infinite ease-in-out;
+    content: '';
+  }
+
+  /* Page enter reveal transition */
+  .animate-page-enter {
+    animation: page-enter 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer::after {
+    animation: none !important;
+  }
+  .animate-page-enter {
+    animation: none !important;
+  }
 }
 
 @media print {

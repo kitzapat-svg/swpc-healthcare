@@ -139,7 +139,7 @@ export default async function DashboardPage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto p-6 md:p-8 space-y-8">
+      <main className="max-w-7xl mx-auto p-6 md:p-8 space-y-8 animate-page-enter">
         {/* Welcome Banner */}
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary via-teal-600 to-emerald-600 p-8 text-white shadow-xl">
           <div className="absolute right-0 top-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-0"></div>
@@ -183,7 +183,7 @@ export default async function DashboardPage() {
             {/* Card 1: Criteria Part 7 */}
             <Link 
               href="/criteria"
-              className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300 border border-slate-200/80 bg-white group cursor-pointer"
+              className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl active:scale-[0.98] transition-all duration-200 border border-slate-200/80 bg-white group cursor-pointer"
             >
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -205,7 +205,7 @@ export default async function DashboardPage() {
             {/* Card 2: Medication Errors */}
             <Link 
               href="/me"
-              className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300 border border-slate-200/80 bg-white group cursor-pointer"
+              className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl active:scale-[0.98] transition-all duration-200 border border-slate-200/80 bg-white group cursor-pointer"
             >
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -227,7 +227,7 @@ export default async function DashboardPage() {
             {/* Card 3: Unsafe Products */}
             <Link 
               href="/unsafe-products"
-              className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300 border border-slate-200/80 bg-white group cursor-pointer"
+              className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl active:scale-[0.98] transition-all duration-200 border border-slate-200/80 bg-white group cursor-pointer"
             >
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -249,7 +249,7 @@ export default async function DashboardPage() {
             {/* Card 4: Evidence Checklist */}
             <Link 
               href="/evidence"
-              className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300 border border-slate-200/80 bg-white group cursor-pointer"
+              className="glass-card rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl active:scale-[0.98] transition-all duration-200 border border-slate-200/80 bg-white group cursor-pointer"
             >
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform">

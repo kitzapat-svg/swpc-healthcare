@@ -134,7 +134,7 @@ export default function UnsafeProductsDashboard({
           <div className="flex items-center gap-3">
             <Link
               href="/dashboard"
-              className="p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition"
+              className="p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 active:scale-90 transition"
               title="กลับสู่หน้าแดชบอร์ดหลัก"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -192,7 +192,7 @@ export default function UnsafeProductsDashboard({
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 space-y-6">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-page-enter">
         {/* Active Safety Alert Ticker if available */}
         {activeAlerts.length > 0 && (
           <div className="space-y-2">

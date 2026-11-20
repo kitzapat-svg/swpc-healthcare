@@ -213,7 +213,7 @@ export default function EvidenceDashboard({
             <div className="flex items-center gap-3">
               <Link
                 href="/dashboard"
-                className="p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition"
+                className="p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 active:scale-90 transition"
                 title="กลับสู่แดชบอร์ดหลัก"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -268,7 +268,7 @@ export default function EvidenceDashboard({
         </header>
 
         {/* Main Content */}
-        <main className="max-w-7xl mx-auto p-6 md:p-8 space-y-6">
+        <main className="max-w-7xl mx-auto p-6 md:p-8 space-y-6 animate-page-enter">
           {/* Controls Bar: Hospital Selector & Fiscal Year */}
           <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-5">
             <div className="flex flex-wrap items-center gap-4">
